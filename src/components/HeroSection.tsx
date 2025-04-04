@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Shield, ArrowRight } from "lucide-react";
-import DetectionPanel from "@/components/DetectionPanel";
+import FactCheckWidget from "@/components/FactCheckWidget";
 
 const HeroSection = () => {
   return (
@@ -39,9 +39,9 @@ const HeroSection = () => {
           </div>
         </div>
         
-        {/* Right Content - Interactive Detection Panel */}
+        {/* Right Content - Interactive Truth Checker */}
         <div className="lg:block">
-          <DetectionPanel />
+          <FactCheckWidget />
         </div>
       </div>
     </section>
