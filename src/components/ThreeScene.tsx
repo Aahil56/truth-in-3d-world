@@ -1,4 +1,3 @@
-
 import { useRef, useEffect, useMemo } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { OrbitControls, Float, Text, PerspectiveCamera } from "@react-three/drei";
@@ -142,91 +141,55 @@ const newsData = [
   {
     text: "Scientists discover new renewable energy source",
     isTrue: true,
-    position: [-6, 3, -3] as [number, number, number],
+    position: [8, 3, -3] as [number, number, number],
     rotation: [0.2, 0.4, 0] as [number, number, number]
   },
   {
     text: "Aliens confirmed to have visited Earth last year",
     isTrue: false,
-    position: [7, 2, -5] as [number, number, number],
+    position: [6, 2, -5] as [number, number, number],
     rotation: [-0.1, -0.3, 0.1] as [number, number, number]
   },
   {
     text: "Global temperatures rise by 2 degrees over the past decade",
     isTrue: true,
-    position: [-5, -2, -4] as [number, number, number],
+    position: [7, -2, -4] as [number, number, number],
     rotation: [0.3, -0.2, 0] as [number, number, number]
   },
   {
     text: "Study shows chocolate prevents all diseases",
     isTrue: false,
-    position: [6, -3, -2] as [number, number, number],
+    position: [9, -3, -2] as [number, number, number],
     rotation: [-0.2, 0.1, 0.2] as [number, number, number]
   },
-  {
-    text: "New legislation passed to reduce carbon emissions",
-    isTrue: true,
-    position: [-3, 4, -8] as [number, number, number],
-    rotation: [0.1, 0.5, -0.1] as [number, number, number]
-  },
-  {
-    text: "Water found to have memory that affects human health",
-    isTrue: false,
-    position: [4, 5, -6] as [number, number, number],
-    rotation: [0.3, -0.4, 0.2] as [number, number, number]
-  }
 ];
-
-// Camera controller to add some gentle movement
-const CameraController = () => {
-  const { camera } = useThree();
-  const cameraRef = useRef<THREE.PerspectiveCamera>();
-  
-  useEffect(() => {
-    if (camera && typeof camera.position.set === 'function') {
-      camera.position.set(0, 0, 10);
-      if (cameraRef.current) {
-        cameraRef.current = camera as THREE.PerspectiveCamera;
-      }
-    }
-  }, [camera]);
-  
-  useFrame(({ clock }) => {
-    const t = clock.getElapsedTime() * 0.2;
-    if (cameraRef.current && typeof camera.position.set === 'function') {
-      camera.position.x = Math.sin(t) * 1.5;
-      camera.position.y = Math.cos(t) * 1.5;
-    }
-  });
-  
-  return null;
-};
 
 // Main Scene Component
 const Scene = () => {
   return (
     <Canvas style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', zIndex: -1 }}>
       <PerspectiveCamera makeDefault position={[0, 0, 10]} />
-      <CameraController />
       <ambientLight intensity={0.5} />
       <pointLight position={[10, 10, 10]} intensity={1} />
       <pointLight position={[-10, -10, -10]} intensity={0.5} color="#3498db" />
       
-      <TruthSphere />
-      {newsData.map((news, index) => (
-        <NewsArticle 
-          key={index} 
-          position={news.position} 
-          rotation={news.rotation} 
-          text={news.text}
-          isTrue={news.isTrue}
-        />
-      ))}
-      <Particles count={300} />
+      {/* Positioned more to the right side */}
+      <group position={[4, 0, 0]}>
+        <TruthSphere />
+        {newsData.map((news, index) => (
+          <NewsArticle 
+            key={index} 
+            position={news.position} 
+            rotation={news.rotation} 
+            text={news.text}
+            isTrue={news.isTrue}
+          />
+        ))}
+        <Particles count={300} />
+      </group>
+      
       <OrbitControls 
-        enableZoom={true} 
-        maxDistance={20} 
-        minDistance={5}
+        enableZoom={false}
         enablePan={false}
         autoRotate
         autoRotateSpeed={0.5}
