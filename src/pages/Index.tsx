@@ -3,7 +3,8 @@ import ThreeScene from "@/components/ThreeScene";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
-import TrustedBy from "@/components/TrustedBy";
+import Features from "@/components/Features";
+import HowItWorks from "@/components/HowItWorks";
 
 const Index = () => {
   return (
@@ -17,7 +18,8 @@ const Index = () => {
       <div className="relative z-10">
         <Navbar />
         <HeroSection />
-        <TrustedBy />
+        <Features />
+        <HowItWorks />
         <Footer />
       </div>
     </div>

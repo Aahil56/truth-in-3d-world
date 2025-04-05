@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { Shield, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import FactCheckWidget from "@/components/FactCheckWidget";
 
 const HeroSection = () => {
@@ -9,11 +9,6 @@ const HeroSection = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
         {/* Left Content */}
         <div className="max-w-2xl">
-          <div className="mb-8 inline-flex items-center px-4 py-2 rounded-full bg-blue-100/10 text-blue-400 backdrop-blur-sm border border-blue-400/20">
-            <Shield size={18} className="mr-2" />
-            <span>Hack the Hoax Challenge</span>
-          </div>
-          
           <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-6">
             <span className="block text-white">Detect</span>
             <span className="block text-white">Misinformation</span>
@@ -29,12 +24,6 @@ const HeroSection = () => {
           <div className="flex flex-wrap gap-4">
             <Button className="truth-button flex items-center gap-2 text-lg px-8 py-6">
               Explore Dashboard <ArrowRight size={18} />
-            </Button>
-            <Button 
-              variant="outline" 
-              className="border-truth-light text-truth-light hover:bg-truth-light/10 text-lg px-8 py-6"
-            >
-              Learn More
             </Button>
           </div>
         </div>

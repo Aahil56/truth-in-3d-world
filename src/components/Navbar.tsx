@@ -37,7 +37,6 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-8">
             <a href="#features" className="text-gray-300 hover:text-white transition-colors">Features</a>
             <a href="#how-it-works" className="text-gray-300 hover:text-white transition-colors">How it Works</a>
-            <a href="#about" className="text-gray-300 hover:text-white transition-colors">About Us</a>
             <Button className="truth-button">Try It Now</Button>
           </div>
           
@@ -70,13 +69,6 @@ const Navbar = () => {
               onClick={() => setIsMobileMenuOpen(false)}
             >
               How it Works
-            </a>
-            <a 
-              href="#about" 
-              className="text-gray-300 hover:text-white transition-colors py-2 px-4"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              About Us
             </a>
             <Button className="truth-button mx-4">Try It Now</Button>
           </div>
