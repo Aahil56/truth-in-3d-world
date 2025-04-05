@@ -29,7 +29,7 @@ const Navbar = () => {
           <div className="flex items-center">
             <a href="/" className="flex items-center">
               <div className="h-8 w-8 rounded-full bg-truth-light animate-glow mr-2"></div>
-              <span className="text-xl font-bold text-white glow-text">TruthSphere</span>
+              <span className="text-xl font-bold text-white glow-text">TruthXtract</span>
             </a>
           </div>
           

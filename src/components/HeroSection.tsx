@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
-import FactCheckWidget from "@/components/FactCheckWidget";
+import { ArrowRight, Camera } from "lucide-react";
+import DeepfakeDetector3D from "@/components/DeepfakeDetector3D";
 
 const HeroSection = () => {
   return (
@@ -25,12 +25,18 @@ const HeroSection = () => {
             <Button className="truth-button flex items-center gap-2 text-lg px-8 py-6">
               Explore Dashboard <ArrowRight size={18} />
             </Button>
+            <Button 
+              className="bg-purple-600 hover:bg-purple-700 text-white flex items-center gap-2 text-lg px-8 py-6"
+              href="/deepfake-detection"
+            >
+              Deepfake Detection <Camera size={18} />
+            </Button>
           </div>
         </div>
         
-        {/* Right Content - Interactive Truth Checker */}
-        <div className="lg:block">
-          <FactCheckWidget />
+        {/* Right Content - 3D Deepfake Detector Visualization */}
+        <div className="lg:block h-[500px]">
+          <DeepfakeDetector3D />
         </div>
       </div>
     </section>

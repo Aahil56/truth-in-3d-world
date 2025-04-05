@@ -11,7 +11,7 @@ const Footer = () => {
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center mb-4">
               <div className="h-8 w-8 rounded-full bg-truth-light animate-glow mr-2"></div>
-              <span className="text-xl font-bold text-white glow-text">TruthSphere</span>
+              <span className="text-xl font-bold text-white glow-text">TruthXtract</span>
             </div>
             <p className="text-gray-300 mb-6 max-w-xs">
               Leveraging AI to detect fake news and promote information integrity in the digital landscape.
@@ -55,7 +55,7 @@ const Footer = () => {
         
         <div className="border-t border-gray-700 mt-12 pt-6 text-center">
           <p className="text-gray-400">
-            &copy; {currentYear} TruthSphere. All rights reserved.
+            &copy; {currentYear} TruthXtract. All rights reserved.
           </p>
         </div>
       </div>
