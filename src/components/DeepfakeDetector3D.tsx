@@ -29,12 +29,12 @@ const FaceModel = () => {
       <Text
         position={[0, 0, 1.3]}
         color="#2ecc71"
-        fontSize={0.4}
+        fontSize={5}
         font="/fonts/inter.woff"
         anchorX="center"
         anchorY="middle"
         renderOrder={1}
-        strokeWidth={0.01}
+        strokeWidth={0.1}
         strokeColor="#2ecc71"
       >
         **REAL**
@@ -44,13 +44,13 @@ const FaceModel = () => {
       <Text
         position={[0, 0, -1.3]}
         color="#e74c3c"
-        fontSize={0.4}
+        fontSize={5}
         font="/fonts/inter.woff"
         anchorX="center"
         anchorY="middle"
         renderOrder={1}
         rotation={[0, Math.PI, 0]}
-        strokeWidth={0.01}
+        strokeWidth={0.1}
         strokeColor="#e74c3c"
       >
         **FAKE**
