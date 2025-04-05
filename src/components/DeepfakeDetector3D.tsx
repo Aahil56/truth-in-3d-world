@@ -1,7 +1,6 @@
-
-import { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, Text, Float, Sphere } from "@react-three/drei";
+import { OrbitControls, Text, Float } from "@react-three/drei";
 import * as THREE from "three";
 
 const FaceModel = () => {
@@ -30,27 +29,31 @@ const FaceModel = () => {
       <Text
         position={[0, 0, 1.3]}
         color="#2ecc71"
-        fontSize={0.3}
+        fontSize={0.4}
         font="/fonts/inter.woff"
         anchorX="center"
         anchorY="middle"
         renderOrder={1}
+        strokeWidth={0.01}
+        strokeColor="#2ecc71"
       >
-        REAL
+        **REAL**
       </Text>
       
       {/* "FAKE" Label on back of sphere (opposite side) */}
       <Text
         position={[0, 0, -1.3]}
         color="#e74c3c"
-        fontSize={0.3}
+        fontSize={0.4}
         font="/fonts/inter.woff"
         anchorX="center"
         anchorY="middle"
         renderOrder={1}
-        rotation={[0, Math.PI, 0]} // Rotate to face outward from back of sphere
+        rotation={[0, Math.PI, 0]}
+        strokeWidth={0.01}
+        strokeColor="#e74c3c"
       >
-        FAKE
+        **FAKE**
       </Text>
       
       {/* Face Detection Points */}
@@ -123,7 +126,6 @@ const FaceModel = () => {
   );
 };
 
-// Background particles
 const Particles = () => {
   return (
     <group>
