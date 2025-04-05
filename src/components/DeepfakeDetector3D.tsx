@@ -9,7 +9,7 @@ const FaceModel = () => {
   
   useFrame(({ clock }) => {
     if (groupRef.current) {
-      groupRef.current.rotation.y = Math.sin(clock.getElapsedTime() * 0.3) * 0.2;
+      groupRef.current.rotation.y = Math.sin(clock.getElapsedTime() * 0.3) * 0.2 + clock.getElapsedTime() * 0.1;
     }
   });
   
@@ -25,6 +25,33 @@ const FaceModel = () => {
           emissiveIntensity={0.3}
         />
       </mesh>
+      
+      {/* "REAL" Label on front of sphere */}
+      <Text
+        position={[0, 0, 1.3]}
+        color="#2ecc71"
+        fontSize={0.3}
+        font="/fonts/inter.woff"
+        anchorX="center"
+        anchorY="middle"
+        renderOrder={1}
+      >
+        REAL
+      </Text>
+      
+      {/* "FAKE" Label on back of sphere (opposite side) */}
+      <Text
+        position={[0, 0, -1.3]}
+        color="#e74c3c"
+        fontSize={0.3}
+        font="/fonts/inter.woff"
+        anchorX="center"
+        anchorY="middle"
+        renderOrder={1}
+        rotation={[0, Math.PI, 0]} // Rotate to face outward from back of sphere
+      >
+        FAKE
+      </Text>
       
       {/* Face Detection Points */}
       {Array.from({ length: 50 }).map((_, i) => {
@@ -92,26 +119,6 @@ const FaceModel = () => {
           DEEPFAKE ANALYSIS
         </Text>
       </Float>
-      
-      <Float speed={1} rotationIntensity={0.5} floatIntensity={0.5}>
-        <mesh position={[0, -1.8, 0]}>
-          <planeGeometry args={[2, 0.5]} />
-          <meshStandardMaterial 
-            color="#e74c3c"
-            emissive="#e74c3c"
-            emissiveIntensity={0.5}
-          />
-          <Text
-            position={[0, 0, 0.1]}
-            color="#ffffff"
-            fontSize={0.2}
-            anchorX="center"
-            anchorY="middle"
-          >
-            MANIPULATED CONTENT
-          </Text>
-        </mesh>
-      </Float>
     </group>
   );
 };
@@ -146,7 +153,7 @@ const Particles = () => {
 
 const DeepfakeDetector3D = () => {
   return (
-    <div className="w-full h-full rounded-xl overflow-hidden border border-blue-500/30">
+    <div className="w-full h-full rounded-xl overflow-hidden">
       <Canvas>
         <color attach="background" args={['#0a192f']} />
         <ambientLight intensity={0.5} />
