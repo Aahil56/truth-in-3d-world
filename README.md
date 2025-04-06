@@ -1,4 +1,4 @@
-# Welcome to ou TruthXtract project
+# Welcome to our TruthXtract project
 
 ## Project info
 
